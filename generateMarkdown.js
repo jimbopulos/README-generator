@@ -26,9 +26,27 @@ function generateMarkdown(data) {
       selectedBadge = "";
       break;
   }
-  return `# ${data.title}
+  let tableOfContents;
+    data.tableContents ? tableOfContents = `
+    ## Table of Contents
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [Credits](#credits)
+    * [License](#license)` 
+    : tableOfContents = "";
 
-`;
+  return `# ${data.title}
+## License
+This application is covered under the ${data.license} license.
+## Description
+${data.description}
+${tableOfContents}
+## Installation
+${data.installation}
+## Usage
+${data.usage}
+## Credits
+${data.credits}`;
 }
 
 module.exports = generateMarkdown;
