@@ -22,18 +22,19 @@ function generateMarkdown(data) {
       break;
     case "Creative Commons":
       selectedBadge = "[![CC-0 license](https://img.shields.io/badge/License-CC--0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0)"
+      break;
     default: 
       selectedBadge = "";
       break;
   }
   let tableOfContents;
     data.tableContents ? tableOfContents = 
-    `## Table of Contents
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Credits](#credits)
-    * [License](#license)` 
-    : tableOfContents = "";
+`## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)` 
+: tableOfContents = "";
   return `# ${data.fileName}
 ${selectedBadge}
 ## License
