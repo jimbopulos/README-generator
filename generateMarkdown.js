@@ -22,20 +22,21 @@ function generateMarkdown(data) {
       break;
     case "Creative Commons":
       selectedBadge = "[![CC-0 license](https://img.shields.io/badge/License-CC--0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0)"
+      break;
     default: 
       selectedBadge = "";
       break;
   }
   let tableOfContents;
-    data.tableContents ? tableOfContents = `
-    ## Table of Contents
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Credits](#credits)
-    * [License](#license)` 
-    : tableOfContents = "";
-
-  return `# ${data.title}
+    data.tableContents ? tableOfContents = 
+`## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)` 
+: tableOfContents = "";
+  return `# ${data.fileName}
+${selectedBadge}
 ## License
 This application is covered under the ${data.license} license.
 ## Description
@@ -47,6 +48,11 @@ ${data.installation}
 ${data.usage}
 ## Credits
 ${data.credits}
+## Tests
+To run tests, enter the following into your terminal:
+\`\`\`md
+${data.tests}
+\`\`\`
 ## Questions
 If you have any questions, please contact ${data.username} at ${data.email}`;
 }
