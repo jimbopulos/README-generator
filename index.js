@@ -24,12 +24,37 @@ const questions = inquirer
                             name: "tableContents",
                             message: "Would you like to include a Table of Contents?",
                         },
+                        {
+                            type: "input",
+                            name: "installation",
+                            message: "Please provide a step-by-step description of how to get your application running.",
+                        },
+                        {
+                            type: "input",
+                            name: "usage",
+                            message: "Please provide instructions and examples for use.",
+                        },
+                        {
+                            type: "input",
+                            name: "credits",
+                            message: "List any collaborators and their GitHub profile links",
+                        },
+                        {
+                            type: "list",
+                            name: "license",
+                            choices: ["Apache 2.0", "BSD", "Attribution", "Eclipse", "GNU", "Mozilla 2.0", "IBM", "MIT", "Mozilla", "Zlib"],
+                            message: "Please select a license",
+                        },
                     ])
                     // callback function for user responses
-                    .then(response => {
-                        console.log(response.username);
-                        console.log(response.description);
-                        console.log(response.tableContents);
+                    .then(data => {
+                        console.log(data.username);
+                        console.log(data.description);
+                        console.log(data.tableContents);
+                        console.log(data.installation);
+                        console.log(data.usage);
+                        console.log(data.credits);
+                        console.log(data.license);
                     })
 
 // FUNCTIONS ==================================
