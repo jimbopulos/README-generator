@@ -17,9 +17,11 @@ function generateMarkdown(data) {
     case "MIT":
       selectedBadge = "[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)"
       break;
-    case "Apache 2.0":
-      selectedBadge = "![AUR license](https://img.shields.io/aur/license/Apache%202.0?style=plastic)"
+    case "GPLv3":
+      selectedBadge = "[![GPL license](https://img.shields.io/badge/License-GPL-blue.svg)](http://perso.crans.org/besson/LICENSE.html)"
       break;
+    case "Creative Commons":
+      selectedBadge = "[![CC-0 license](https://img.shields.io/badge/License-CC--0-blue.svg)](https://creativecommons.org/licenses/by-nd/4.0)"
     default: 
       selectedBadge = "";
       break;
