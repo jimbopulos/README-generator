@@ -7,8 +7,12 @@ const fs = require("fs");
 
 // USER INTERACTIONS ==========================
 // Create an array of questions for user input
-const questions = inquirer
-                    .prompt([
+const questions = [
+                        {
+                            type: "input",
+                            name: "fileName",
+                            message: "What is the name of this application?",
+                        },
                         {
                             type: "input",
                             name: "username",
@@ -17,9 +21,10 @@ const questions = inquirer
                         {
                             type: "input",
                             name: "description",
-                            message: "Describe your application with a short description.",
+                            message: "Describe your application with a short description:",
                         },
                         {
+                            // will require an if statement
                             type: "confirm",
                             name: "tableContents",
                             message: "Would you like to include a Table of Contents?",
@@ -27,44 +32,59 @@ const questions = inquirer
                         {
                             type: "input",
                             name: "installation",
-                            message: "Please provide a step-by-step description of how to get your application running.",
+                            message: "Please provide a step-by-step description of how to get your application running:",
                         },
                         {
                             type: "input",
                             name: "usage",
-                            message: "Please provide instructions and examples for use.",
+                            message: "Please provide instructions and examples for use:",
                         },
                         {
                             type: "input",
                             name: "credits",
-                            message: "List any collaborators and their GitHub profile links",
+                            message: "List any collaborators and their GitHub profile links:",
                         },
                         {
                             type: "list",
                             name: "license",
-                            choices: ["Apache 2.0", "BSD", "Attribution", "Eclipse", "GNU", "Mozilla 2.0", "IBM", "MIT", "Mozilla", "Zlib"],
+                            choices: ["MIT", "Apache 2.0", "BSD", "Attribution", "Eclipse", "GNU", "Mozilla 2.0", "IBM", "Mozilla", "Zlib"],
                             message: "Please select a license",
                         },
-                    ])
-                    // callback function for user responses
-                    .then(data => {
-                        console.log(data.username);
-                        console.log(data.description);
-                        console.log(data.tableContents);
-                        console.log(data.installation);
-                        console.log(data.usage);
-                        console.log(data.credits);
-                        console.log(data.license);
-                    })
+                        {
+                            type: "input",
+                            name: "contribution",
+                            message: "How may other developers contribute to this app?",
+                        },
+                        {
+                            type: "input",
+                            name: "tests",
+                            message: "How would a user run tests for this application? Please provide a command(s)?",
+                        },
+                    ]
 
 // FUNCTIONS ==================================
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//     // console.log(data)
-// }
+// Create a function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (error) => {
+        error ? console.error(error) : console.log("Your README.md has been generated!");
+    });
+}
 
-// TODO: Create a function to initialize app
-// function init() {}
+// Create a function to initialize app
+function init() {
+    // callback function for user responses
+    inquirer.prompt(questions).then((response) => {
+        // console.log(data.username);
+        // console.log(data.description);
+        // console.log(data.tableContents);
+        // console.log(data.installation);
+        // console.log(data.usage);
+        // console.log(data.credits);
+        // console.log(data.license);
+        // console.log(data.tests);
+        writeToFile("readME.md", generateMarkdown(response));
+    });
+}
 
 // Function call to initialize app
-// init();
+init();
