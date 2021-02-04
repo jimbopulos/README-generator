@@ -53,7 +53,7 @@ const questions = [
                         {
                             type: "list",
                             name: "license",
-                            choices: ["MIT", "GPLv3", "Creative Commons"],
+                            choices: ["MIT", "GPLv3", "Apache 2.0", "Mozilla Public 2.0", "Creative Commons"],
                             message: "Please select a license",
                         },
                         {
@@ -88,7 +88,7 @@ function init() {
         // console.log(data.credits);
         // console.log(data.license);
         // console.log(data.tests);
-        writeToFile("README.md", generateMarkdown(response));
+        writeToFile("myREADME.md", generateMarkdown(response));
     });
 }
 
