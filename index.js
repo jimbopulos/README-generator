@@ -2,6 +2,7 @@
 // Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateMarkdown = require("./generateMarkdown");
 
 // DATA =======================================
 
@@ -17,6 +18,11 @@ const questions = [
                             type: "input",
                             name: "username",
                             message: "What is your username?",
+                        },
+                        {
+                            type: "input",
+                            name: "email",
+                            message: "What is your e-mail address?"
                         },
                         {
                             type: "input",
@@ -47,7 +53,7 @@ const questions = [
                         {
                             type: "list",
                             name: "license",
-                            choices: ["MIT", "Apache 2.0", "BSD", "Attribution", "Eclipse", "GNU", "Mozilla 2.0", "IBM", "Mozilla", "Zlib"],
+                            choices: ["MIT", "GPLv3", "Creative Commons"],
                             message: "Please select a license",
                         },
                         {
