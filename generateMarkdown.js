@@ -49,7 +49,9 @@ ${data.usage}
 ${data.credits}
 ## Tests
 To run tests, enter the following into your terminal:
+\`\`\`md
 ${data.tests}
+\`\`\`
 ## Questions
 If you have any questions, please contact ${data.username} at ${data.email}`;
 }
