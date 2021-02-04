@@ -88,7 +88,7 @@ function init() {
         // console.log(data.credits);
         // console.log(data.license);
         // console.log(data.tests);
-        writeToFile("readME.md", generateMarkdown(response));
+        writeToFile("README.md", generateMarkdown(response));
     });
 }
 

@@ -27,15 +27,15 @@ function generateMarkdown(data) {
       break;
   }
   let tableOfContents;
-    data.tableContents ? tableOfContents = `
-    ## Table of Contents
+    data.tableContents ? tableOfContents = 
+    `## Table of Contents
     * [Installation](#installation)
     * [Usage](#usage)
     * [Credits](#credits)
     * [License](#license)` 
     : tableOfContents = "";
-
-  return `# ${data.title}
+  return `# ${data.fileName}
+${selectedBadge}
 ## License
 This application is covered under the ${data.license} license.
 ## Description
@@ -47,6 +47,9 @@ ${data.installation}
 ${data.usage}
 ## Credits
 ${data.credits}
+## Tests
+To run tests, enter the following into your terminal:
+${data.tests}
 ## Questions
 If you have any questions, please contact ${data.username} at ${data.email}`;
 }
