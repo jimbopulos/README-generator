@@ -2,6 +2,7 @@
 // Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateMarkdown = require("generateMarkdown");
 
 // DATA =======================================
 
@@ -47,7 +48,7 @@ const questions = [
                         {
                             type: "list",
                             name: "license",
-                            choices: ["MIT", "Apache 2.0", "BSD", "Attribution", "Eclipse", "GNU", "Mozilla 2.0", "IBM", "Mozilla", "Zlib"],
+                            choices: ["MIT", "Apache 2.0", "Eclipse", "GNU", "Mozilla 2.0", "IBM"],
                             message: "Please select a license",
                         },
                         {
