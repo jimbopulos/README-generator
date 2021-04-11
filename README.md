@@ -19,7 +19,13 @@ Generates a README.md file based on user inputs for multiple fields.
 
 ## Installation
 
-To begin: clone the repository to your local machine using the git clone command in your terminal. Then, open the directory in an editor of your choice. Next, you will need to have Node.js installed, and subsequently run `npm init` in your terminal and follow the prompts (user may also use `-y` flag in command to bypass prompts and intialize defaults). Following this, you will need to install inquirer using the command `npm i inquirer`. Lastly, run the command `node "file_name"` in your editor terminal to begin the prompts.
+To begin:
+
+1. Clone the repository to your local machine using the `git clone` command in your terminal.
+2. Open the directory in an editor of your choice.
+3. You will need to have Node.js installed: run `npm init` in your terminal and follow the prompts (user may also use `-y` flag in command to bypass prompts and intialize defaults).
+4. Install inquirer using the command `npm i inquirer`.
+5. Run the command `node index.js` in your editor terminal to begin the prompts.
 
 ## Usage
 
@@ -27,7 +33,7 @@ To begin: clone the repository to your local machine using the git clone command
 
 ## Credits
 
-Loreto Delgado. GitHub profile: @ldelgadoIII
+Collaborato(s): Loreto Delgado. GitHub: @ldelgadoIII
 
 ## Tests
 
